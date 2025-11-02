@@ -2,6 +2,7 @@ use std::env;
 use std::process;
 
 #[derive(Debug)]
+
 pub struct Config {
     pub query: String,
     pub file_path: String,
@@ -21,7 +22,7 @@ impl Config {
         })
     }
 
-    fn build(args: &[String]) -> Result<Config, &str> {
+    fn build(args: &[String]) -> Result<Config, &'static str> {
         if args.len() < 3 {
             return Err("Usage: rtw-grep <pattern> <path>");
         }
